@@ -1,3 +1,5 @@
+.DS_Store
+._*
 axis_test_program
 CMakeCache.txt
 CMakeFiles
