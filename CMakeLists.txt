@@ -1,24 +1,9 @@
 cmake_minimum_required (VERSION 2.6)
-project (curltest)
+project(axis_test_program)
 
-SET(requiredlibs)
-
-find_package( OpenCV REQUIRED )
-
-
-FIND_PACKAGE(CURL)
-IF(CURL_FOUND)
-  INCLUDE_DIRECTORIES(${CURL_INCLUDE_DIR})
-  SET(requiredlibs ${requiredlibs} ${CURL_LIBRARIES} )
-ELSE(CURL_FOUND)
-  MESSAGE(FATAL_ERROR "Could not find the CURL library and development files.")
-ENDIF(CURL_FOUND)
-
-FIND_PACKAGE(BOOST)
-INCLUDE_DIRECTORIES(${BOOST_INCLUDE_DIR})
-SET(requiredlibs ${requiredlibs} ${BOOST_LIBRARIES} )
+include_directories(../axis_ptz)
+include_directories(../axis_cv)
 
 set(CMAKE_CXX_FLAGS "-std=c++11")
-
-add_executable( curltest main.cpp axis.cpp )
-target_link_libraries( curltest ${CURL_LIBRARIES}   ${OpenCV_LIBS}  ${BOOST_LIBRARIES})
+add_executable(axis_test_program main.cpp)
+target_link_libraries(axis_test_program)
