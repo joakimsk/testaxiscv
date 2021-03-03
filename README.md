@@ -1,1 +1,2 @@
-# Axis 6045 Test Program
+# testaxiscv
+Depends on libaxiscv
